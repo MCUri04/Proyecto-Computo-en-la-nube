@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid C.F. - El Rey de Europa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        madridGold: '#d4af37',
+                        madridGoldDark: '#aa8c2c',
+                        madridDark: '#0b1329',
+                        madridBlue: '#132247'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #f7efc5 0%, #d4af37 50%, #aa8c2c 100%);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(11, 19, 41, 0.85), rgba(11, 19, 41, 0.95)), url('https://placehold.co/1920x1080/0b1329/d4af37?text=Santiago+Bernabeu') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-madridGold selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-madridDark/90 backdrop-blur-md border-b border-madridGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg shadow-madridGold/20">
+                    <i class="fa-solid fa-crown text-madridDark text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-white font-extrabold text-lg tracking-wider block">REAL MADRID</span>
+                    <span class="text-madridGold text-xs tracking-widest block uppercase font-semibold">C.F.</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-200">
+                <a href="#inicio" class="hover:text-madridGold transition-colors">Inicio</a>
+                <a href="#historia" class="hover:text-madridGold transition-colors">Historia</a>
+                <a href="#plantilla" class="hover:text-madridGold transition-colors">Plantilla</a>
+                <a href="#palmares" class="hover:text-madridGold transition-colors">Palmarés</a>
+                <a href="#contacto" class="hover:text-madridGold transition-colors">Contacto</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleModal('socioModal')" class="hidden sm:inline-flex items-center space-x-2 px-5 py-2.5 rounded-full gold-gradient text-madridDark font-bold text-sm shadow-md hover:opacity-90 transition-opacity">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Hazte Socio</span>
+                </button>
+                <button id="menuBtn" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-madridDark border-t border-madridGold/20 px-4 pt-4 pb-6 space-y-3">
+            <a href="#inicio" class="block text-slate-200 hover:text-madridGold font-medium py-1">Inicio</a>
+            <a href="#historia" class="block text-slate-200 hover:text-madridGold font-medium py-1">Historia</a>
+            <a href="#plantilla" class="block text-slate-200 hover:text-madridGold font-medium py-1">Plantilla</a>
+            <a href="#palmares" class="block text-slate-200 hover:text-madridGold font-medium py-1">Palmarés</a>
+            <a href="#contacto" class="block text-slate-200 hover:text-madridGold font-medium py-1">Contacto</a>
+            <button onclick="toggleModal('socioModal')" class="w-full mt-2 py-2.5 rounded-full gold-gradient text-madridDark font-bold text-sm shadow-md">
+                Hazte Socio
+            </button>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative min-h-screen hero-bg flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center sm:text-left z-10 w-full">
+            <div class="max-w-3xl">
+                <span class="inline-block py-1 px-4 rounded-full bg-madridGold/20 border border-madridGold/40 text-madridGold text-xs font-bold tracking-widest uppercase mb-6">
+                    Club de Fútbol Elegido El Mejor del Siglo XX por la FIFA
+                </span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-none mb-6">
+                    Hala Madrid <span class="text-transparent bg-clip-text gold-gradient">y Nada Más</span>
+                </h1>
+                <p class="text-slate-300 text-base sm:text-xl font-normal mb-8 leading-relaxed">
+                    Bienvenidos al sitio web oficial de la leyenda blanca. Pasión, gloria y valores que han conquistado el planeta fútbol durante más de 120 años.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
+                    <a href="#plantilla" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient text-madridDark font-bold text-base shadow-xl hover:opacity-95 transition-all transform hover:-translate-y-0.5 text-center">
+                        Ver Plantilla 2026
+                    </a>
+                    <a href="#palmares" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base backdrop-blur-sm transition-all text-center">
+                        Explorar Palmarés
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Absolute decorative badge -->
+        <div class="absolute bottom-10 right-10 hidden lg:flex items-center space-x-3 bg-madridDark/60 backdrop-blur-md px-6 py-4 rounded-2xl border border-madridGold/30">
+            <i class="fa-solid fa-trophy text-madridGold text-3xl"></i>
+            <div>
+                <p class="text-xs text-slate-400 uppercase font-semibold">Copas de Europa</p>
+                <p class="text-white text-xl font-extrabold">15 Títulos de Champions</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-madridGold text-sm font-extrabold tracking-widest uppercase mb-2 block">Nuestra Leyenda</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-madridDark tracking-tight">Historia del Real Madrid</h2>
+                <div class="w-20 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center text-madridDark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-madridDark mb-3">Fundación (1902)</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Oficialmente fundado el 6 de marzo de 1902 bajo el nombre de (Sociedad) Madrid Foot Ball Club, germen de una dinastía destinada a cambiar la historia del deporte rey.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center text-madridDark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-madridDark mb-3">Las 5 Copas de Europa</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        De la mano de leyendas inmortales como Don Alfredo Di Stéfano y Ferenc Puskás, el club dominó el continente conquistando de manera consecutiva las primeras cinco ediciones de la máxima competición europea.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center text-madridDark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-madridDark mb-3">Era Moderna y Siglo XXI</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Conquistador infatigable de la Champions League, incluyendo épicas remontadas en el nuevo Santiago Bernabéu y la continua atracción de los mejores talentos del planeta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plantilla" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-madridGold text-sm font-extrabold tracking-widest uppercase mb-2 block">Estrellas Blancas</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-madridDark tracking-tight">Plantilla Principal</h2>
+                <div class="w-20 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Position Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterPlayers('all')" class="filter-btn active-filter px-5 py-2.5 rounded-full bg-madridDark text-white font-semibold text-sm shadow-md transition-all">Todos</button>
+                <button onclick="filterPlayers('delantero')" class="filter-btn px-5 py-2.5 rounded-full bg-white text-slate-700 hover:bg-madridDark hover:text-white font-semibold text-sm shadow-sm transition-all border border-slate-200">Delanteros</button>
+                <button onclick="filterPlayers('centrocampista')" class="filter-btn px-5 py-2.5 rounded-full bg-white text-slate-700 hover:bg-madridDark hover:text-white font-semibold text-sm shadow-sm transition-all border border-slate-200">Centrocampistas</button>
+                <button onclick="filterPlayers('defensa')" class="filter-btn px-5 py-2.5 rounded-full bg-white text-slate-700 hover:bg-madridDark hover:text-white font-semibold text-sm shadow-sm transition-all border border-slate-200">Defensas</button>
+                <button onclick="filterPlayers('portero')" class="filter-btn px-5 py-2.5 rounded-full bg-white text-slate-700 hover:bg-madridDark hover:text-white font-semibold text-sm shadow-sm transition-all border border-slate-200">Porteros</button>
+            </div>
+
+            <!-- Players Grid -->
+            <div id="playersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Player Card 1 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="delantero">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Kylian+Mbappe" alt="Kylian Mbappé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            9
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Delantero</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Kylian Mbappé</h3>
+                        <p class="text-slate-500 text-sm">Velocidad vertiginosa, desborde letal y voracidad goleadora para liderar el ataque madridista.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 2 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="delantero">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Vinicius+Jr" alt="Vinicius Jr" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            7
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Delantero</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Vinicius Jr.</h3>
+                        <p class="text-slate-500 text-sm">Magia brasileña, desequilibrio indescifrable y carisma absoluto sobre el terreno de juego.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 3 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="centrocampista">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Jude+Bellingham" alt="Jude Bellingham" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            5
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Centrocampista</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Jude Bellingham</h3>
+                        <p class="text-slate-500 text-sm">Liderazgo prematuro, llegada fulgurante al área rival y elegancia absoluta en la medular.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 4 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="centrocampista">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Fede+Valverde" alt="Fede Valverde" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            8
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Centrocampista</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Fede Valverde</h3>
+                        <p class="text-slate-500 text-sm">El motor incansable del equipo, potencia física inagotable y disparos descomunales desde media distancia.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 5 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="defensa">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Antonio+Ruediger" alt="Antonio Rüdiger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            22
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Defensa</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Antonio Rüdiger</h3>
+                        <p class="text-slate-500 text-sm">Carácter indomable, seguridad defensiva inquebrantable y entrega total en cada balón dividido.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 6 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="portero">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Thibaut+Courtois" alt="Thibaut Courtois" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            1
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Portero</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Thibaut Courtois</h3>
+                        <p class="text-slate-500 text-sm">El muro infranqueable bajo palos, reflejos felinos y dominio absoluto del área.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 7 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="delantero">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Rodrygo+Goes" alt="Rodrygo Goes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            11
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Delantero</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Rodrygo Goes</h3>
+                        <p class="text-slate-500 text-sm">Clase silenciosa, apariciones decisivas en noches mágicas de Champions y gran definición.</p>
+                    </div>
+                </div>
+
+                <!-- Player Card 8 -->
+                <div class="player-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-200 group" data-category="centrocampista">
+                    <div class="relative h-64 bg-madridDark overflow-hidden">
+                        <img src="https://placehold.co/400x400/132247/d4af37?text=Eduardo+Camavinga" alt="Eduardo Camavinga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/132247/d4af37?text=Player'">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-extrabold text-madridDark text-sm shadow">
+                            6
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-widest text-madridGoldDark font-bold block mb-1">Centrocampista</span>
+                        <h3 class="text-xl font-bold text-madridDark mb-2">Eduardo Camavinga</h3>
+                        <p class="text-slate-500 text-sm">Polivalencia total, despliegue físico portentoso y recuperación limpia de balones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="palmares" class="py-24 bg-madridDark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-madridGold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-madridGold text-sm font-extrabold tracking-widest uppercase mb-2 block">Museo Blanco</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Palmarés Histórico</h2>
+                <div class="w-20 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900/60 border border-madridGold/20 rounded-2xl p-6 text-center backdrop-blur-sm hover:border-madridGold/60 transition-colors">
+                    <div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center text-madridDark text-2xl mb-4 shadow-lg shadow-madridGold/10">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <span class="text-4xl sm:text-5xl font-black text-madridGold block mb-2">15</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Copas de Europa / Champions League</h3>
+                    <p class="text-slate-400 text-xs">El rey indiscutible de Europa</p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-madridGold/20 rounded-2xl p-6 text-center backdrop-blur-sm hover:border-madridGold/60 transition-colors">
+                    <div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center text-madridDark text-2xl mb-4 shadow-lg shadow-madridGold/10">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-4xl sm:text-5xl font-black text-madridGold block mb-2">36</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Ligas de España</h3>
+                    <p class="text-slate-400 text-xs">Dominio nacional histórico</p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-madridGold/20 rounded-2xl p-6 text-center backdrop-blur-sm hover:border-madridGold/60 transition-colors">
+                    <div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center text-madridDark text-2xl mb-4 shadow-lg shadow-madridGold/10">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <span class="text-4xl sm:text-5xl font-black text-madridGold block mb-2">20</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Copas del Rey</h3>
+                    <p class="text-slate-400 text-xs">Emoción en torneos coperos</p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-madridGold/20 rounded-2xl p-6 text-center backdrop-blur-sm hover:border-madridGold/60 transition-colors">
+                    <div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center text-madridDark text-2xl mb-4 shadow-lg shadow-madridGold/10">
+                        <i class="fa-solid fa-earth-europe"></i>
+                    </div>
+                    <span class="text-4xl sm:text-5xl font-black text-madridGold block mb-2">8</span>
+                    <h3 class="text-lg font-bold text-white mb-1">Mundiales de Clubes</h3>
+                    <p class="text-slate-400 text-xs">Cima del fútbol mundial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg text-center">
+                <span class="text-madridGold text-sm font-extrabold tracking-widest uppercase mb-2 block">Mantente Conectado</span>
+                <h2 class="text-3xl font-black text-madridDark mb-4">Suscríbete al Boletín Blanco</h2>
+                <p class="text-slate-600 mb-8 max-w-lg mx-auto text-sm sm:text-base">
+                    Recibe las últimas noticias del equipo, crónicas de partidos y contenido exclusivo directamente en tu correo.
+                </p>
+                <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" id="emailInput" required placeholder="Tu correo electrónico..." class="flex-grow px-5 py-3.5 rounded-xl border border-slate-300 focus:outline-none focus:border-madridGold text-sm">
+                    <button type="submit" class="px-6 py-3.5 rounded-xl gold-gradient text-madridDark font-bold text-sm shadow-md hover:opacity-90 transition-opacity">
+                        Suscribirme
+                    </button>
+                </form>
+                <div id="subscribeMsg" class="hidden mt-4 text-emerald-600 font-semibold text-sm"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-madridDark text-slate-400 py-12 border-t border-madridGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-madridDark font-bold">
+                    <i class="fa-solid fa-crown text-sm"></i>
+                </div>
+                <span class="text-white font-extrabold tracking-wider">REAL MADRID C.F.</span>
+            </div>
+            <p class="text-xs text-center md:text-left">
+                &copy; 2026 Real Madrid C.F. Sitio web demostrativo de diseño moderno. ¡Hala Madrid!
+            </p>
+            <div class="flex space-x-4 text-lg">
+                <a href="#" class="hover:text-madridGold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-madridGold transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-madridGold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-madridGold transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Socio Registration -->
+    <div id="socioModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 relative shadow-2xl m-4">
+            <button onclick="toggleModal('socioModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full gold-gradient mx-auto flex items-center justify-center text-madridDark text-xl mb-3">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="text-2xl font-black text-madridDark">Hazte Socio</h3>
+                <p class="text-slate-500 text-sm mt-1">Únete a la familia madridista más grande del mundo.</p>
+            </div>
+            <form onsubmit="handleSocioSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-madridGold text-sm" placeholder="Ej. Sergio Ramos">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico</label>
+                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-madridGold text-sm" placeholder="correo@ejemplo.com">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl gold-gradient text-madridDark font-bold text-sm shadow-md hover:opacity-90 transition-opacity">
+                    Completar Registro
+                </button>
+            </form>
+            <div id="socioSuccessMsg" class="hidden mt-4 text-center text-emerald-600 font-semibold text-sm"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Players Function
+        function filterPlayers(category) {
+            const cards = document.querySelectorAll('.player-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-madridDark', 'text-white', 'active-filter');
+                btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            event.target.classList.add('bg-madridDark', 'text-white');
+
+            // Show/hide cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Toggle Helper
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        // Newsletter subscription handler
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const input = document.getElementById('emailInput');
+            const msg = document.getElementById('subscribeMsg');
+            msg.textContent = '¡Gracias por suscribirte al boletín oficial!';
+            msg.classList.remove('hidden');
+            input.value = '';
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Socio form submission handler
+        function handleSocioSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('socioSuccessMsg');
+            msg.textContent = '¡Felicidades! Tu solicitud de socio ha sido enviada con éxito.';
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                toggleModal('socioModal');
+                msg.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
